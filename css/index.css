@@ -188,7 +188,7 @@ header .profile-photo {
   max-height: 250px;
   border-radius: 50%;
   margin: 0 auto;
-  background-color: #f4b400;
+  background-color: #f4c20d;
 }
 header .profile-photo img {
   width: 100%;
@@ -295,19 +295,11 @@ h2.title {
   font-size: 1.5em;
 }
 .skills .skill-single:nth-child(2) > .skillbar {
-  background: #7cc6dd;
+  background: #f4c20d;
   width: 60%;
 }
-.skills .skill-single:nth-child(3) > .skillbar {
-  background: #61a361;
-  width: 100%;
-}
-.skills .skill-single:nth-child(4) > .skillbar {
-  background: #b7b62f;
-  width: 100%;
-}
-.skills .skill-single:last-child > .skillbar {
-  background: #5b5bc5;
+.skills .skill-single:not(:first-child):not(:nth-child(2)) > .skillbar {
+  background: #3cba54;
   width: 100%;
 }
 .experience {
