@@ -186,15 +186,23 @@ header .profile-photo {
   height: 250px;
   max-width: 250px;
   max-height: 250px;
+  border-radius: 50%;
   margin: 0 auto;
+  background-color: #f4b400;
 }
 header .profile-photo img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  filter: grayscale(100%) contrast(1);
+  mix-blend-mode: multiply;
+}
+header .profile-photo:hover {
+  background: none;
 }
 header .profile-photo:hover > img {
-  transform: scale(1.1);
+  filter: none;
+  mix-blend-mode: normal;
 }
 header .person {
   display: flex;
@@ -264,7 +272,7 @@ h2.title {
 }
 .skills .skill-single {
   width: 70%;
-  height: 24px;
+  height: 30px;
   position: relative;
   background: #ccc;
   margin: 20px auto;
@@ -283,10 +291,11 @@ h2.title {
   margin-top: 15px 0 0 15px;
   text-shadow: none;
   color: #fff;
+  font-weight: 700;
   font-size: 1.5em;
 }
 .skills .skill-single:nth-child(2) > .skillbar {
-  background: #e09090;
+  background: #7cc6dd;
   width: 60%;
 }
 .skills .skill-single:nth-child(3) > .skillbar {
