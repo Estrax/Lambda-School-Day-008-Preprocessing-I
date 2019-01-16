@@ -143,7 +143,6 @@ body {
 body {
   font-family: 'Product Sans';
   background: #000;
-  overflow: hidden;
 }
 .container {
   width: 80%;
@@ -161,9 +160,23 @@ nav a {
   font-size: 1.5em;
   text-decoration: none;
   color: #fff;
+  opacity: 0.6;
+}
+nav a:hover {
+  opacity: 1;
 }
 nav a:not(:last-child) {
   margin-right: 20px;
+}
+@media screen and (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  nav a {
+    border-bottom: 1px solid #fff;
+    margin-right: 0 !important;
+  }
 }
 header {
   margin-top: 50px;
@@ -171,12 +184,17 @@ header {
 header .profile-photo {
   width: 250px;
   height: 250px;
+  max-width: 250px;
+  max-height: 250px;
   margin: 0 auto;
 }
 header .profile-photo img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+header .profile-photo:hover > img {
+  transform: scale(1.1);
 }
 header .person {
   display: flex;
@@ -189,12 +207,27 @@ header .person h1 {
   color: #fff;
   font-size: 3em;
 }
+header .person h1 span {
+  color: #3b5998;
+  font-weight: 700;
+}
 header .person p {
   margin-top: 16px;
   text-align: center;
   color: #fff;
   width: 100%;
-  font-size: 1.6em;
+  font-size: 1.3em;
+}
+@media screen and (max-width: 500px) {
+  header .person p {
+    width: 70%;
+    margin: 16px auto 0;
+  }
+}
+header .person p.contact a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
 }
 header .person p.title {
   color: #fff;
@@ -203,10 +236,70 @@ header .person p.title {
   font-size: 1em;
 }
 h2.title {
-  margin: 50px 0;
+  margin: 50px 0 25px;
   color: #fff;
   font-size: 2em;
   text-align: center;
+}
+.about {
+  margin-bottom: 50px;
+}
+.about p {
+  color: #fff;
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 15px 25px;
+}
+@media screen and (max-width: 500px) {
+  .about p {
+    border: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+.skills {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.skills .skill-single {
+  width: 70%;
+  height: 24px;
+  position: relative;
+  background: #ccc;
+  margin: 20px auto;
+}
+.skills .skill-single .skillbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.skills .skill-single .skillbar .skill-name {
+  z-index: 1;
+  float: left;
+  margin-top: 15px 0 0 15px;
+  text-shadow: none;
+  color: #fff;
+  font-size: 1.5em;
+}
+.skills .skill-single:nth-child(2) > .skillbar {
+  background: #e09090;
+  width: 60%;
+}
+.skills .skill-single:nth-child(3) > .skillbar {
+  background: #61a361;
+  width: 100%;
+}
+.skills .skill-single:nth-child(4) > .skillbar {
+  background: #b7b62f;
+  width: 100%;
+}
+.skills .skill-single:last-child > .skillbar {
+  background: #5b5bc5;
+  width: 100%;
 }
 .experience {
   margin-top: 50px;
@@ -226,7 +319,24 @@ h2.title {
 .experience tr:nth-child(odd) {
   background: #ccc;
 }
+.experience tr:hover {
+  font-weight: 700;
+}
 .experience th {
   background-color: #3b5998;
   color: #fff;
+}
+footer {
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+footer p {
+  color: #fff;
+  font-size: 1.2em;
+  opacity: 0.6;
+}
+footer p:hover {
+  opacity: 1;
 }
