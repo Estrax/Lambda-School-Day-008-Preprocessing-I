@@ -145,6 +145,10 @@ body {
   background: #000;
   overflow: hidden;
 }
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
 nav {
   display: flex;
   flex-direction: row;
@@ -192,8 +196,37 @@ header .person p {
   width: 100%;
   font-size: 1.6em;
 }
-header .title h2 {
+header .person p.title {
   color: #fff;
   text-align: center;
   margin-top: 32px;
+  font-size: 1em;
+}
+h2.title {
+  margin: 50px 0;
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+}
+.experience {
+  margin-top: 50px;
+}
+.experience table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.experience th,
+.experience td {
+  text-align: center;
+  padding: 8px;
+}
+.experience tr:nth-child(even) {
+  background: #fff;
+}
+.experience tr:nth-child(odd) {
+  background: #ccc;
+}
+.experience th {
+  background-color: #3b5998;
+  color: #fff;
 }

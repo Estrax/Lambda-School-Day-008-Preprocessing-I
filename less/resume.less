@@ -1,5 +1,7 @@
 @white: #fff;
+@lightgray: #ccc;
 @black: #000;
+@blue: #3b5998;
 
 @font-face {
     font-family: 'Product Sans';
@@ -12,6 +14,11 @@ body {
     font-family: 'Product Sans';
     background: @black;
     overflow: hidden;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
 nav {
@@ -66,13 +73,48 @@ header {
             width: 100%;
             font-size: 1.6em;
         }
-    }
-
-    .title {
-        h2 {
+        p.title {
             color: @white;
             text-align: center;
             margin-top: 32px;
+            font-size: 1em;
         }
+    }
+}
+
+h2.title {
+    margin: 50px 0;
+    color: @white;
+    font-size: 2em;
+    text-align: center;
+}
+
+.experience {
+    margin-top: 50px;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+      
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr {
+        &:nth-child(even) {
+            background: @white;
+        }
+
+        &:nth-child(odd) {
+            background: @lightgray;
+        }
+    }
+    
+      
+    th {
+        background-color: @blue;
+        color: @white;
     }
 }
