@@ -1,0 +1,256 @@
+@white: #fff;
+@lightgray: #ccc;
+@black: #000;
+@blue: #3b5998;
+@green: #3cba54;
+@yellow: #f4c20d;
+
+.dflex(){
+    display: flex;
+}
+
+.flexcol(){
+    flex-direction: column;
+}
+
+.flexrow(){
+    flex-direction: row;
+}
+
+
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+body {
+    font-family: 'Product Sans';
+    background: @black;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    .dflex();
+    .flexrow();
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    margin: 25px 25px 0 0;
+
+    a {
+        padding-left: 20px;
+        font-size: 1.5em;
+        text-decoration: none;
+        color: @white;
+        opacity: 0.6;
+        &:hover {
+            opacity: 1;
+        }
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .flexcol();
+        width: 100%;
+        a {
+            border-bottom: 1px solid @white;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+header {
+    margin-top: 50px;
+
+    .profile-photo {
+        width: 250px;
+        height: 250px;
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-color: @yellow;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            filter: grayscale(100%) contrast(1);
+            mix-blend-mode: multiply;
+        }
+
+        &:hover {
+            background: none;
+
+            > img  {
+                filter: none;
+                mix-blend-mode: normal;
+            }
+        }
+    }
+
+    .person {
+        .dflex();
+        .flexcol();
+        justify-content: center;
+        margin-top: 24px;
+
+        h1 {
+            text-align: center;
+            color: @white;
+            font-size: 3em;
+            span {
+                color: @blue;
+                font-weight: 700;
+            }
+        }
+
+        p {
+            margin-top: 16px;
+            text-align: center;
+            color: @white;
+            width: 100%;
+            font-size: 1.3em;
+            @media screen and (max-width: 500px) {
+                width: 70%;
+                margin: 16px auto 0;
+            }
+        }
+
+        p.contact {
+            a {
+                text-decoration: none;
+                color: @white;
+                font-weight: 700;
+            }
+        }
+
+        p.title {
+            color: @white;
+            text-align: center;
+            margin-top: 32px;
+            font-size: 1em;
+        }
+    }
+}
+
+h2.title {
+    margin: 50px 0 25px;
+    color: @white;
+    font-size: 2em;
+    text-align: center;
+}
+
+.about {
+    margin-bottom: 50px;
+    p {
+        color: @white;
+        width: 60%;
+        margin: 0 auto;
+        border: 1px solid @lightgray;
+        padding: 15px 25px;
+        @media screen and (max-width: 500px) {
+            border: none;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.skills {
+    width: 100%;
+    margin-bottom: 50px;
+
+    .skill-single {
+        width: 70%;
+        height: 30px;
+        position: relative;
+        background: @lightgray;
+        margin: 20px auto;
+
+        .skillbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            .skill-name {
+                z-index: 1;
+                float: left;
+                margin-top: 15px 0 0 15px;
+                text-shadow: none;
+                color: @white;
+                font-weight: 700;
+                font-size: 1.5em;
+            }
+        }
+        &:nth-child(2) > .skillbar {
+            background: @yellow;
+            width: 60%;
+        }
+
+        &:not(:first-child):not(:nth-child(2)) > .skillbar {
+            background: @green;
+            width: 100%;
+        }
+    }   
+}
+    
+
+.experience {
+    margin-top: 50px;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+      
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr {
+        &:nth-child(even) {
+            background: @white;
+        }
+
+        &:nth-child(odd) {
+            background: @lightgray;
+        }
+        &:hover {
+            font-weight: 700;
+        }
+    }
+    
+      
+    th {
+        background-color: @blue;
+        color: @white;
+    }
+}
+
+footer {
+    margin: 50px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    p {
+        color: @white;
+        font-size: 1.2em;
+        opacity: 0.6;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
